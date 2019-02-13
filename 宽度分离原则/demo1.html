@@ -1,0 +1,27 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>宽度分离原则</title>
+    <style>
+        #father{
+            width: 200px;
+            background: #000000
+        }
+        #son{
+            padding: 20px;
+            margin:0 20px;
+            border: 1px dotted #000;
+            background: #ff5252;
+        }
+        /*宽度分离就是给父元素设置一个定宽，子元素不设置宽度，使其自适应。*/
+        /*宽度分离的意义：让子元素自己适应宽度，因为父元素是固定的，所以子元素怎么变化都不会影响父元素，使页面布局更加稳固*/
+        /*宽度分离增加了html标签，会有维护上的困难。后面可以使用box-sizing: border-box替代*/
+    </style>
+</head>
+<body>
+    <div id="father">
+        <div id="son"></div>
+    </div>
+</body>
+</html>
