@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>example</title>
+    <style>
+        #app{
+            position: relative;
+            display:inline-block;
+        }
+        img{
+            width: 100%;
+        }
+        #app::before{
+            content: '';
+            display:block;
+            position: absolute;
+            width:50%;
+            height: 100%;
+            left:0;
+            top:0;
+            background:#000;
+            opacity: .8
+        }
+        #app::after{
+            content: '';
+            display:block;
+            position: absolute;
+            width:50%;
+            height: 100%;
+            right:0;
+            top:0;
+            background:#ff5252;
+            opacity: .4
+        }
+    </style>
+</head>
+<body>
+    <div id="app">
+        <img src="1.jpg" alt="">
+    </div>
+</body>
+</html>
