@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>line-height</title>
+    <style>
+        /* 样式1：此时 .box 高度是多少？ */
+        
+        .box {
+            line-height: 100px;
+            background: lightgreen;
+        }
+        
+        .box span {
+            line-height: 30px;
+        }
+        /* 复制代码样式2：此时 .box 高度是多少？ */
+        
+        .box {
+            line-height: 30px;
+            background: lightgreen;
+        }
+        
+        .box span {
+            line-height: 100px;
+        }
+        /* 复制代码先说结论：无论内联元素的line-height如何设置，最终父元素的高度都是数值大的那个line-height决定的。
+      样式1中，span元素的行框盒子前存在一个幽灵空白节点，而这个幽灵空白节点的行高是100px；样式2中，幽灵空白节点的行高是30px，但是这时span元素的行高是100px。两种情况其实一样，取大值而已。 */
+    </style>
+</head>
+
+<body>
+    <!-- line-height定义的就是两基线之间的距离，vertical-align的默认值就是基线。基线的定义则是字母 x 的下边缘。  -->
+    <!-- css中有个概念叫x-height，指的是小写字母 x 的高度。vertical-align: middle对齐的就是基线往上1/2x-height高度的地方，可以理解为近似字母 x 的交叉点。 -->
+
+
+    <!-- line-height 属性值 -->
+    <!-- normal： 默认值normal其实是类型为数值的变量，根据浏览器和字体'font-family'不同而不同，一般约为 1.2 。 -->
+    <!-- 数值和百分比：最终会被计算为带单位的值，具体计算方法就是乘以字体大小font-size。 -->
+    <!-- 这几类值的继承特性不同：line-height是数值的元素的子元素继承的就是这个数值，百分比/长度值继承的都是计算后得出的带单位的值（px）。 -->
+
+
+    <!-- 内联元素默认基线对其 -->
+
+    <div class="box">
+        <span>asdf</span>
+    </div>
+
+    <!-- 
+      一个设置了display: inline-block的元素：
+          如果元素内部没有内联元素，则该元素基线就是该元素下边缘；
+          如果元素设置了overflow为hidden auto scroll，则其基线就是该元素下边缘；
+          如果元素内部还有内联元素，则其基线就是内部最后一行内联元素的基线。
+    -->
+    <!-- 用vertical-align实现垂直居中; father里面的line-height就是给幽灵节点一个行高。能把父元素撑起来; son的vertical-middle正好就和这个幽灵节点的baseline的靠上方对齐了。 -->
+    <div class="father">
+        <!-- 这里有一个幽灵节点 -->
+        <div class="son"></div>
+    </div>
+    <style>
+        .father {
+            width: 100px;
+            line-height: 300px;
+            font-size: 0;
+            background: #000;
+            text-align: center
+        }
+        
+        .son {
+            background: #fff;
+            width: 50px;
+            height: 50px;
+            display: inline-block;
+            vertical-align: middle
+        }
+    </style>
+
+</body>
+
+</html>
