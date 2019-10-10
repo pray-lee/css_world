@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        h1.example {
+            content: url(http://pic16.nipic.com/20111006/6239936_092702973000_2.jpg)
+            /* content属性只有在chrome浏览器下才可以识别 */
+        }
+    </style>
+</head>
+<body>
+    <h3>什么是替换元素？ 就是内容可以被替换的元素，比如img object, video, iframe textarea input</h3>
+    <h3>替换元素的特性</h3>
+    <p>内容的外观不收页面上的css的影响, 有自己的尺寸, 在很多css属性上有自己的一套表现规则</p>
+    <h3>所有的替换元素都是内联水平元素，都是可以在一行显示的，但是替换元素默认的display的值确实不一样的</h3>
+    <h2>img 的src属性如果不写的话，是没有请求的，但是如果写成src=""的话就不一样了。有些浏览器会有请求,所以不写是最高效的方式,但是在不写的时候，firefox浏览器中给img设置宽高会设置不上,firefox会把img当成span标签处理，这是给img加一个css: inline-block就可以了</h2>
+    <h2>css中，图片资源的固有尺寸是无法改变的</h2>
+    <h3>我们看到的img可以设置宽高是因为图片中的content替换内容默认的适配方式是fill（填充）,在css3中，这个适配方式可以被更改：object-fit</h3>
+    <h1>------------------------------------------------------------</h1>
+    <h1 class="example">css世界</h1>
+</body>
+</html>
