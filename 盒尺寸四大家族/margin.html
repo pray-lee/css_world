@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        *{
+            margin:0;
+            padding: 0
+        }
+        .wrapper{
+            width: 460px;
+            overflow:hidden;
+            background:#000
+        }
+        ul{
+            /* 他的宽度其实是480 */
+            margin-right: -20px;
+            overflow: hidden;
+            background:#ff5252;
+        }
+        li {
+            float:left;
+            width: 100px;
+            margin-right: 20px;
+            background:#ccc;
+            list-style: none;
+        }
+        h3{
+            padding:40px
+        }
+    </style>
+</head>
+<body>
+    <h1>通过负的margin值可以处理类似导航栏左右距离相等的导航，不用去特殊处理最后一个元素的margin-right了
+    </h1>
+    <h3>demo, 右侧多出来的margin-right值 直接把这个值的负数赋值给父容器的margin-right</h3>
+    <div class="wrapper">
+        <ul>
+            <li>1</li>
+            <li>1</li>
+            <li>1</li>
+            <li>1</li>
+        </ul> 
+    </div>
+    <h1>底部留白的话，只能使用子元素的margin-bottom来实现滚动容器的底部留白，不要使用padding,会有兼容性问题</h1>
+</body>
+</html>

@@ -5,8 +5,36 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>padding</title>
+    <style>
+        .box{
+            overflow:hidden
+        }
+        .full{
+            width: 100%;
+            float:left;
+
+        }
+        .box img{
+            width: 128px;
+            float:left;
+            margin-left: -128px
+        }
+        .full p{
+            margin-right: 140px;
+        }
+        
+    </style>
 </head>
 <body>
- <h1>行内元素设置padding会影响上下元素的布局, 但是其本身所在的位置不受影响</h1>
+    <h1>行内元素设置padding会影响元素本身，但是对上下元素的原本布局没有任何影响</h1>
+    <h1 style="color:#ff5252">padding百分比值无论是水平方向还是垂直方向都是相对于宽度计算的</h1>
+
+
+    <div class="box">
+        <div class="full">
+            <p>文字内容。。。</p>
+        </div>
+        <img src="http://pic16.nipic.com/20111006/6239936_092702973000_2.jpg" alt="">
+    </div>
 </body>
 </html>
