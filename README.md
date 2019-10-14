@@ -17,6 +17,7 @@ ul-parent{
    width: 200px 
 }
 ul { /* important */
+    /* 实际宽度是210,多余的10px刚好给了li最后一个元素的右边距 */
     margin-right: -10px;
 }
 ul > li {
@@ -29,19 +30,19 @@ ul > li {
 
 ### padding百分比值无论是水平方向还是垂直方向都是相对于宽度计算的
 
-### 1ex就是一个x元素的高度借助ex单位，我们可以利用默认的baseline基线对齐实现图标和文字垂直居中的效果
+### 1ex就是一个x元素的高度借助ex单位，我们可以利用默认的baseline基线对齐实现图标和文字垂直居中的效果,把图标设置成1ex
 
 ### 行距 = lineHeight - fontSize
 
 
 ### 多行文字垂直居中 借用vertical-align属性实现
 ```
-.box{
+.box {
     line-height: 120px; /* important */
     background:#ccc
 }
-.content{
-    display:inline-block;
+.content {
+    display:inline-block; /* important */
     line-height: 20px;
     vertical-align: middle  /* important */
 }
@@ -54,22 +55,3 @@ ul > li {
 - 百分比继承的是父容器的line-height*font-size计算出来的计算值，子元素的line-height实际就是x% * (parent.line-height * parent.font-size) 
 - 属性值的继承是继承的父容器的属性值，实际计算行高是 x * child.font-size
 - 数值就是一个定值。不计算
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
