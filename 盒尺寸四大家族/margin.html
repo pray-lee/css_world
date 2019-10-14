@@ -46,5 +46,28 @@
         </ul> 
     </div>
     <h1>底部留白的话，只能使用子元素的margin-bottom来实现滚动容器的底部留白，不要使用padding,会有兼容性问题</h1>
+
+    <h1>-------------------------------------------------------------------------------</h1>
+    <h2>利用margin外部尺寸实现等高布局案例; ie8及以上浏览器推荐使用table-cell</h2>
+    <style>
+        .column-box{
+            display:table
+        }
+        .column-left, .column-right{
+            display:table-cell
+        }
+    </style>
+    <div class="column-box">
+        <div class="column-left">
+            <p>hahahah</p>
+        </div>
+        <div class="column-right">
+            <p>hahahahaha</p>
+            <p>hahahahaha</p>
+            <p>hahahahaha</p>
+            <p>hahahahaha</p>
+            <p>hahahahaha</p>
+        </div>
+    </div>
 </body>
 </html>
