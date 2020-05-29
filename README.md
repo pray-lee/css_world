@@ -55,3 +55,5 @@ ul > li {
 - 百分比继承的是父容器的line-height*font-size计算出来的计算值，子元素的line-height实际就是x% * (parent.line-height * parent.font-size) 
 - 属性值的继承是继承的父容器的属性值，实际计算行高是 x * child.font-size
 - 数值就是一个定值。不计算
+
+### 
